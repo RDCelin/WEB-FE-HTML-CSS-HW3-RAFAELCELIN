@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JHW3 Topics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header"></div>
+        <p><b>ME WHEN MY BLOG</b></p>
+    </header>
+    <div class="container-big">
+    <div class="container-small">
+    <h1>Async (Attribute)</h1>
+    <p>Async is a boolean attribute and its job is:</p>
+    <p>when true the scripts is downloaded alongside the page and is executed as soon as possible</p>
+    <!--<script src="Async.js" async></script>-->
+    <!--<p>The value for age is: <span id=age></span></p>-->
+    <p>Look at this example</p>
+    <p><code> let age = 375</p>
+        (script src="Async.js" async)(script) </code> where Async is:
+    <p>console.log("Age:", age)</p>
+    <p>alert("age is "+ age);</p>
+    <p>document.getElementById("age").innerHTML = age;</code></p>
+    <p>the code is executed as soon as possible, before the page has fully loaded,thus the alert is displayed before tha
+        page has finished loading</p>
+    </div>
+    <div class="container-small">
+    <h1>Callback</h1>
+    <p>A Callback is a function that is a function that is executed when it is CALLED instead when it is defined</p>
+    <p>example:</p>
+    <p><code>
+    <p>function twoplustwo() {</p>
+        <p>  let result= 2+2;</p>
+     <p> }</p>
+     <p>...</p>
+     <p>twoplustwo()</p>
+  </code></p>
+    <p>the function two plust two is defined but no called until it is called later</p>
+</div>
+<div class="container-small">
+    <h1>Promise</h1>
+    <p>Promises find their placein asynchronous operations, since they allow you to determine what code to run if an
+        action is either resolved or failed after defining the promise and after the asynchronous task is completed </p>
+    <code>
+    <p>let myPromise = new Promise(function(myResolve, myReject) {</p>
+    <p>...</p>
+
+    <p> myResolve(); // when successful</p>
+    <p> myReject(); // when error</p>
+    <p> });</p>
+
+    <p> ...</p>
+    <p> myPromise.then(</p>
+    <p> function(value) { /* code if successful */ },</p>
+    <p> function(error) { /* code if some error */ }</p>
+    <p> );</p></code>
+</div><div class="container-small">
+    <h1>Async/Await</h1>
+    <p>The keyword async before a function makes the function return a promise, inside of wich, the await keyword stops
+        a function until a promise resolves</p>
+    <p>Example:</p>
+    <code> <p>async function myDisplay() {</p>
+        <p>let myPromise = new Promise(function(resolve) {</p>
+            <p>setTimeout(function() {resolve("I love You !!");}, 3000);</p>
+            <p> });</p>
+            <p> document.getElementById("demo").innerHTML = await myPromise;</p>
+        <p>}</p>
+      
+        <p>myDisplay();</p>
+      
+      </code>
+    </div>
+   <div class="container-small">
+    <h1>Event loops</h1>
+
+    <p>an event loop is the secret by which JavaScript gives us an illusion of being multithreaded even though it is
+        single-threaded.</p>
+    <p>Javascript maintains a stack of the order of the actions it must take</p>
+    <p>Example of a function an its stack</p>
+    <code>
+        <p>function LevelTwo() {</p>
+            <p> console.log("Inside Level Two!")</p>
+            <p> }</p>
+         
+            <p> function LevelOne() {</p>
+                <p>LevelTwo()</p>
+                <p> }</p>
+         
+                <p>function main() {</p>
+                    <p>LevelOne()</p>
+                    <p>}</p>
+         
+                    <p>main()</p>
+      </code>
+      <img src="img/functionStack.png" alt="stack">
+      <p>and this is how the event loop works</p>
+      <img src="img/eventQueue1.png">
+      <img src="img/eventQueue1 (1).png">
+      <img src="img/eventQueue1 (2).png">
+      </div>
+    </div>
+</body>
+
+</html>
